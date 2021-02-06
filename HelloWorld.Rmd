@@ -1,0 +1,56 @@
+---
+title: "HelloWorld"
+output: github_document
+---
+
+##R Estatística Descritiva
+
+#Qualitativas ordinais
+#Classe social, grau de instrução e estágio
+#da doença. 
+
+```{r}
+classe_social=c("A","B","C","D","E")
+grau_instrucao=c("Ensino fundamental","Ensino médio","Ensino Superior")
+estagio_doenca=c("Estágio inicial","Estágio intermediário","Estágio terminal")
+meses=c("Janeiro","Fevereiro","março")
+ranking=c("Primeiro","Segundo","Terceiro")
+
+a_classe_social=sample(classe_social,size=100, replace=TRUE)
+a_grau_intrucao=sample(grau_instrucao,size=100, replace=TRUE)
+a_estagio_doenca=sample(estagio_doenca,size=100, replace=TRUE)
+a_meses=sample(meses,size=100, replace=TRUE)
+a_ranking=sample(ranking,size=100, replace=TRUE)
+
+variaveis_categoricas_ordinais=data.frame(a_classe_social,
+                                          a_grau_intrucao,
+                                          a_estagio_doenca,
+                                          a_meses,a_ranking)
+```
+
+##pizza frequência simples
+
+This is an R Markdown used to publish markdown documents in compliance with the Data Scientist Tools course, week 4.
+
+## Including Code
+
+
+```{r Pizza}
+variaveis_categoricas_ordinais
+View(variaveis_categoricas_ordinais)
+```
+
+##pizza frequência simples
+```{r Pizza}
+df_pizza_tab=table(variaveis_categoricas_ordinais$a_classe_social)
+df_pizza=as.data.frame(df_pizza_tab)
+df_pizza
+```
+
+```{r "Gráfico de pizza - Frequência relativa classe social (%)"), echo=FALSE}
+pie(df_pizza_porcent$Freq,
+    labels=paste(df_pizza_porcent$Var1,df_pizza_porcent$Freq*100,"%"),
+    main="Gráfico de pizza - Frequência relativa classe social (%)")
+```
+
+Obrigado a todoos
